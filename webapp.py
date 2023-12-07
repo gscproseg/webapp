@@ -101,6 +101,8 @@ def infer_image(img, size=None):
 
 @st.experimental_singleton
 def load_model(path, device):
+    # Adicione esta linha para limpar o cache do Torch Hub
+    torch.hub._reset()
     model_ = torch.hub.load('ultralytics/yolov5', 'custom', path=path, force_reload=True)
     model_.to(device)
     print("model to ", device)
@@ -114,20 +116,18 @@ def download_model(url):
 
 
 def get_user_model():
-    model_src = st.sidebar.radio("Model source", ["file upload", "url"])
+    model_src = st.sidebar.radio("Model source", ["Use our demo model 5s", "Use your own model"])
     model_file = None
-    if model_src == "file upload":
-        model_bytes = st.sidebar.file_uploader("Upload a model file", type=['pt'])
-        if model_bytes:
-            model_file = "models/uploaded_" + model_bytes.name
-            with open(model_file, 'wb') as out:
-                out.write(model_bytes.read())
-    else:
-        url = st.sidebar.text_input("model url")
-        if url:
-            model_file_ = download_model(url)
-            if model_file_.split(".")[-1] == "pt":
-                model_file = model_file_
+    if model_src == "Use your own model":
+        user_model_path = get_user_model()
+        if user_model_path:
+            cfg_model_path = user_model_path
+
+        st.sidebar.text(cfg_model_path.split("/")[-1])
+        st.sidebar.markdown("---")
+
+    if model_file:
+        model_file = cfg_model_path
 
     return model_file
 
