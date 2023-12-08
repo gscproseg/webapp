@@ -12,4 +12,7 @@ requests-toolbelt==0.10.1
 streamlit
 streamlit-webrtc
 tornado==6.2
+torch>=1.7.0
+torchvision>=0.8.1
+tqdm>=4.41.0
 wget
