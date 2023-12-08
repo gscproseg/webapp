@@ -1,5 +1,11 @@
-streamlit==0.88.0
-wget==3.2
-Pillow==8.3.2
-torch==1.9.0
-opencv-python==4.5.3.56
+streamlit
+wget
+Pillow
+torch
+opencv-python
+opencv-python-headless  
+pandas
+pandas
+seaborn
+numpy
+Ultralytics
