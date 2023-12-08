@@ -4,6 +4,7 @@
 # Base ----------------------------------------
 matplotlib>=3.2.2
 numpy==1.23.4
+opencv-python
 opencv-python-headless==4.6.0.66
 Pillow==9.3.0
 PyYAML>=5.3.1
