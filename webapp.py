@@ -99,10 +99,12 @@ def infer_image(img, size=None):
     return image
 
 
+
 @st.experimental_singleton
 def load_model(path, device):
-    # Adicione esta linha para limpar o cache do Torch Hub
-    torch.hub._validate_not_a_forked_repo = lambda a, b, c, d: None
+    # Desabilita a validação de repositório
+    torch.hub._validate_not_a_forked_repo = lambda repo_owner, repo_name, ref: None
+
     model_ = torch.hub.load('ultralytics/yolov5', 'custom', path=path, force_reload=True)
     model_.to(device)
     print("model to ", device)
