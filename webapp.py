@@ -3,6 +3,7 @@ import streamlit as st
 import cv2
 import glob
 import wget
+import PIL
 from PIL import Image
 import torch
 import os
