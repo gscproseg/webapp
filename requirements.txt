@@ -23,7 +23,7 @@ seaborn>=0.11.0
 ipython  # Caderno interativo
 psutil  # Utilização do sistema
 thop  # Computação de FLOPs
-streamlit==1.29.0
+streamlit==22.0.3
 streamlit-webrtc
 wget
 
