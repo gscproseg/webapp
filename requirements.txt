@@ -3,8 +3,7 @@
 
 # Base
 ----------------------------------------
-ultralytics
-opencv-python
+opencv
 matplotlib>=3.2.2
 numpy>=1.18.5
 opencv-python-headless
