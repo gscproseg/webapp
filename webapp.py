@@ -1,9 +1,9 @@
-import glob
 import streamlit as st
+import cv2
+import glob
 import wget
 from PIL import Image
 import torch
-#import cv2
 import os
 import time
 
