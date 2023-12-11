@@ -11,7 +11,7 @@ import cv2
 import time
 
 #st.set_page_config(layout = "wide")
-st.set_page_config(page_title = "Yolo V5 Multiple Object Detection on Pretrained Model", page_icon="🤖")
+st.set_page_config(page_title = "Yolo V5 Multiple Object Detection on Pretrained Model", page_icon="♘")
 
 st.markdown(
     """
